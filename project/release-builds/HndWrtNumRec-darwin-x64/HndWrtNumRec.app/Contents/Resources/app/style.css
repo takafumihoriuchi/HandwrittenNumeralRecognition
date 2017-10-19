@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+body {
+	font-family: sans-serif;
+	animation: fadeIn 1.2s ease-in-out 0s 1 normal;
+    -webkit-animation: fadeIn 1.2s ease-in-out 0s 1 normal;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid gray;
+	width: 8px;
+	line-height: 8px;
+	cursor: pointer;
+}
+
+#character {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 3;
+    -moz-animation: animationTest 5.3s ease-in-out 0s infinite normal;
+    -webkit-animation: animationTest 5.3s ease-in-out 0s infinite normal;-
+    -ms-animation: animationTest 5.3s ease-in-out 0s infinite normal;
+}
+
+@-moz-keyframes animationTest {
+	50%{ transform:scale(1.05); }        
+}
+
+@-webkit-keyframes animationTest {
+	50%{ transform:scale(1.05); }        
+}
+
+@-ms-keyframes animationTest {
+	50%{ transform:scale(1.05); }        
+}
+
+#face:hover img{
+	cursor:pointer;
+}
+
+#canvas {
+
+}
+
+#pgm {
+	visibility: hidden;
+}
+
+#output {
+	position: relative;
+	text-align: center;
+	top:37%;
+	visibility: hidden;
+	
+	opacity: 0; /*0は完全に透明、1は不透明*/
+	transition: opacity 0.8s linear;
+}
+
+.area {
+	/*position: relative;*/
+}
+
+.item1 {
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	z-index: 2;
+}
+
+.item3 {
+	position: absolute;
+	top: 50%;
+	left: 80%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+
+	width: 310px;
+	height: 310px;
+	background: white;
+	border: 1px dotted gray;
+	z-index: 1;
+}
+
+#sigsend1 {
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	position: absolute;
+	top: 50%;
+	left: 18%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	z-index: 0;
+}
+
+#sigsend2 {
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	z-index: 0;
+}
+
+#sigsend3 {
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	position: absolute;
+	top: 50%;
+	left: 22%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	z-index: 0;
+}
+
+
+/*------------------------------------------------------------------------------------------------------
+animation of "breath" cridit to "わんこ/わんちゃん"（http://www.m-inuzuka.com/blog/web/css3-animation-tip/）
+（参考）
+animation-name: アニメーションの名前を自分で自由につける。(書かないと実行されない)
+animation-duration: アニメーション1回分の長さ
+animation-timing-function: アニメーションのタイミング・進行割合
+　かなり細かい設定ができるがとりあえず以下5つだけおさえる。
+　　・ease：開始と完了を滑らかに
+　　・liner：一定
+　　・ease-in：ゆっくり始まる
+　　・ease-out：ゆっくり終わる
+　　・ease-in-out：ゆっくり始まってゆっくり終わる
+animation-delay: アニメーションがいつ始まるか
+animation-iteration-count： アニメーションの繰り返し回数
+　　・infinite: 無限に繰り返す
+　　・数値: 指定回数だけ繰り返す
+animation-direction: アニメーションを交互に反転して繰り返す
+------------------------------------------------------------------------------------------------------*/

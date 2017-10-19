@@ -1,0 +1,51 @@
+<!--type "electron ./main.js" to start the program-->
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <meta charset = "UTF-8">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+      <title>Handwritten Numeral Recognition System based on Convolutional Neural Network</title>
+      <link rel="stylesheet" href="style.css">
+      <script type="text/javascript" src="script.js"></script>
+   </head>
+
+   <body>
+
+      <h1 class="title"><!--Handwritten Numeral Recognition--></h1>
+      
+      <div class="area">      
+         
+         <div class="item1">
+            <table id="canvas"></table>
+         </div>
+         
+         <a id="face">
+            <img id="character" src="character.png" alt="click here" border="0" onclick="charclick();" name="character">
+         </a>
+         
+         <script type="text/javascript">
+            imgarr = new Array("character.png", "character_blink.png");
+            count = 0;
+            blink();
+            //inhale = 1; beat = 0; breath();
+         </script>
+
+         <div class="item3">
+            <h2 id="output"></h2>
+         </div>
+
+         <div id="sigsend1"></div>
+         <div id="sigsend2"></div>
+         <div id="sigsend3"></div>
+      
+      </div>
+
+      <p><!--表示はされないが、データを転送する際の一時貯蔵用-->
+      <textarea rows="48" cols="148" id="pgm"></textarea>
+      <a id="DL_link"></a>
+      </p>
+
+   </body>
+
+</html>
