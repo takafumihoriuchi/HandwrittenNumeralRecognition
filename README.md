@@ -1,3 +1,3 @@
 # Data Recognition
 install electron
-\nrun with "electron ./main.js" at "project" directory
+run with "electron ./main.js" at "project" directory
