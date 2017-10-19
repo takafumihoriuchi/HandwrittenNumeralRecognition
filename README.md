@@ -1,2 +1,2 @@
 # Handwritten Numeral Recognition with GUI
-install electron and run with "electron ./main.js" at "project" directory
+Install electron and run with "electron ./main.js" at "project" directory. You will also need Python installed in your environment.
