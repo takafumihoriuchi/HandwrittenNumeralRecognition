@@ -43,7 +43,7 @@ var examples = [
 ];
 
 var lock_click = false; //characterのクリックにロックをかける仕組み。
-var readyflg = false;
+//var readyflg = false;
 
 function charclick() {
 
@@ -95,8 +95,29 @@ function charclick() {
          });
          $('#pgm').val(pgm); //pgmは常にhiddenになっているtextarea要素を表す
          
+         var str_array = document.getElementById("pgm").value.split("\n"); //pgmの内容を変数str_arrayに格納する
+         //$('#pgm').val(str_array); //cssで#pgmのvisibilityをhiddenにしていない時に、マトリックスの情報を確認するための表示。処理に必要なものではない
+
+         //character画像は実際には単なるボタンであるが、「これが処理を行っている」と感じさせるように表現する
+         //(below:)communicate between javascript(script.js) and python(compute.py)
+         var spawn = require('child_process').spawn,
+            py = spawn('python', ['compute.py']),
+            data = str_array,
+            dataString = '';
+         py.stdout.on('data', function(data){
+            dataString += data.toString();
+         });
+         py.stdout.on('end', function(){
+            var elem = document.getElementById("output");
+            elem.innerHTML = dataString; //htmlのoutputエリアに結果を書き込む
+            //readyflg = true;
+         });
+         py.stdin.write(JSON.stringify(data));
+         py.stdin.end();
+         //(above:)communicate between javascript(script.js) and python(compute.py)
+         
          //マトリックスの黒ピクセルを、パラパラと崩れ落ちるように、すべて白に戻す
-         readyflg = false;
+         //readyflg = false;
          disappear();
 
          //情報送信のアニメーション
@@ -104,7 +125,7 @@ function charclick() {
          output_vis.style.opacity = "1";
          $('#sigsend1').animate({'left':'50%'}, 1300, "linear", function(){
             //下の一行を追加(readyflg)。アニメーションとのズレを是正する
-            while (readyflg != true) {}
+            //while (readyflg != true) {}
             $('#character').animate({width: '172.8px',height: '163.2px'}, 70, "swing", function(){
                $('#character').animate({width: '144px',height: '136px'}, 60, "swing"); //心臓の鼓動をイメージする・結果信号が放出される
                //$('#sigsend1').css('backgroundColor','#f44'); //結果信号をピンク色に（ハート・心臓をイメージ）
@@ -122,27 +143,6 @@ function charclick() {
          $('#sigsend3').animate({'left':'54%'}, 1300, "linear", function(){
             $('#sigsend3').animate({'left':'22%'}, 0);
          });
-
-         var str_array = document.getElementById("pgm").value.split("\n"); //pgmの内容を変数str_arrayに格納する
-         //$('#pgm').val(str_array); //cssで#pgmのvisibilityをhiddenにしていない時に、マトリックスの情報を確認するための表示。処理に必要なものではない
-
-         //character画像は実際には単なるボタンであるが、「これが処理を行っている」と感じさせるように表現する
-         //(below:)communicate between javascript(script.js) and python(compute.py)
-         var spawn = require('child_process').spawn,
-            py = spawn('python', ['compute.py']),
-            data = str_array,
-            dataString = '';
-         py.stdout.on('data', function(data){
-            dataString += data.toString();
-         });
-         py.stdout.on('end', function(){
-            var elem = document.getElementById("output");
-            elem.innerHTML = dataString; //htmlのoutputエリアに結果を書き込む
-            readyflg = true;
-         });
-         py.stdin.write(JSON.stringify(data));
-         py.stdin.end();
-         //(above:)communicate between javascript(script.js) and python(compute.py)
 
       } //end of "whiteOnly"
 
