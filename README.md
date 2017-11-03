@@ -6,4 +6,4 @@ You will also need **Python** installed in your environment.
 『ゼロから作るDeep Learning ――Pythonで学ぶディープラーニングの理論と実装』  
 <https://github.com/oreilly-japan/deep-learning-from-scratch>
 ### screenshot
-![alt text](https://github.com/takafumihoriuchi/HandwrittenNumeralRecognition/project/screenshot.png)
+![alt text](https://github.com/takafumihoriuchi/HandwrittenNumeralRecognition/blob/master/project/screenshot.png)
