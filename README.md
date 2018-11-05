@@ -8,8 +8,8 @@
 
 ### Reference:
 - 『ゼロから作るDeep Learning - Pythonで学ぶディープラーニングの理論と実装』
--- the implementation of the CNN used in the backend of the system is based this book.
--- GitHub repo of the book: https://github.com/oreilly-japan/deep-learning-from-scratch>
+  - the implementation of the CNN used in the backend of the system is based this book.
+  - GitHub repo of the book: https://github.com/oreilly-japan/deep-learning-from-scratch>
 
 ### Screenshot:
 ![alt text](https://github.com/takafumihoriuchi/HandwrittenNumeralRecognition/blob/master/project/screenshot.png)
