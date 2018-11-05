@@ -2,7 +2,7 @@
 
 ### How to run:
 1. install electron (https://electronjs.org/)
-2. run with ``electron ./project/main.js``
+2. in the ``/project`` directory, run ``electron ./main.js``
 (important: the default python version must be set to Python3)
 3. draw a number and click smily-face!
 
