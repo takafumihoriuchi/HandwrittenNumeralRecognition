@@ -1,9 +1,13 @@
 # Handwritten Numeral Recognition with GUI
-### how to run:
-Install electron and run with ```electron ./main.js``` at "project" directory.  
-You will also need **Python** installed in your environment.
-### reference:
-『ゼロから作るDeep Learning ――Pythonで学ぶディープラーニングの理論と実装』  
-<https://github.com/oreilly-japan/deep-learning-from-scratch>
-### screenshot:
+
+### How to run:
+1. install electron
+2. run with ``electron ./project/main.js``
+(important: the default python version must be set to Python3)
+3. draw a number and click smily-face!
+
+### Reference:
+- 『ゼロから作るDeep Learning - Pythonで学ぶディープラーニングの理論と実装』<https://github.com/oreilly-japan/deep-learning-from-scratch>
+
+### Screenshot:
 ![alt text](https://github.com/takafumihoriuchi/HandwrittenNumeralRecognition/blob/master/project/screenshot.png)
